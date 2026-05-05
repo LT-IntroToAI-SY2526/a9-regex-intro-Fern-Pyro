@@ -77,11 +77,11 @@ if __name__ == "__main__":
     print(format_birth(get_birth_date("Anita Borg"), "Anita Borg"))
 
     # uncomment below lines for tests once you think you're getting the right output
-    # print('\n<<<< Running asserts, this might take a sec >>>>')
+    print('\n<<<< Running asserts, this might take a sec >>>>')
     # assert get_birth_date("Grace Hopper") == "1906-12-09", "Incorrect birth date for Grace Hopper"
     # assert get_birth_date("Alan Turing") == "1912-06-23", "Incorrect birth date for Alan Turing"
-    # assert get_birth_date("Tim Berners-Lee") == "1955-06-08", "Incorrect birth date for Tim Berners-Lee"
-    # assert get_birth_date("Anita Borg") == "1949-01-17", "Incorrect birth date for Anita Borg"
-    # print('\n<<<< Birth date tests passed >>>>')
+    assert get_birth_date("Tim Berners-Lee") == "1955-06-08", "Incorrect birth date for Tim Berners-Lee"
+    assert get_birth_date("Anita Borg") == "1949-01-17", "Incorrect birth date for Anita Borg"
+    print('\n<<<< Birth date tests passed >>>>')
 
-    # print('\n<<<< All tests passed! >>>>')
+    print('\n<<<< All tests passed! >>>>')
