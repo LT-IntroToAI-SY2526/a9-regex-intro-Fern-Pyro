@@ -37,9 +37,9 @@ def get_birth_date(name: str) -> str:
         birth date of the given person
     """
     infobox_text = clean_text(get_first_infobox_text(get_page_html(name)))
-    print(f"{infobox_text}")
+    #print(f"{infobox_text}")
     # TODO: fill this in
-    pattern = "Born\w+ \w+ \w+\((?P<birth>.{1,10})"
+    pattern = "Born\w+ \w+ [A-Za-z -]+\((?P<birth>.{1,10})"
     error_text = (
         "Page infobox has no birth information (at least none in xxxx-xx-xx format)"
     )
@@ -67,10 +67,10 @@ if __name__ == "__main__":
     print('\n<<<< Planet radius tests passed >>>>')
 
     print("\n<<<<<<<<<<<<<< Testing Birth Dates >>>>>>>>>>>>>>")
-    # # should be 1906-12-09
-    # print(format_birth(get_birth_date("Grace Hopper"), "Grace Hopper"))
-    # # should be 1912-06-23
-    # print(format_birth(get_birth_date("Alan Turing"), "Alan Turing"))
+    # should be 1906-12-09
+    print(format_birth(get_birth_date("Grace Hopper"), "Grace Hopper"))
+    # should be 1912-06-23
+    print(format_birth(get_birth_date("Alan Turing"), "Alan Turing"))
     # should be 1955-06-08
     print(format_birth(get_birth_date("Tim Berners-Lee"), "Tim Berners-Lee"))
     # should be 1949-01-17
@@ -78,8 +78,8 @@ if __name__ == "__main__":
 
     # uncomment below lines for tests once you think you're getting the right output
     print('\n<<<< Running asserts, this might take a sec >>>>')
-    # assert get_birth_date("Grace Hopper") == "1906-12-09", "Incorrect birth date for Grace Hopper"
-    # assert get_birth_date("Alan Turing") == "1912-06-23", "Incorrect birth date for Alan Turing"
+    assert get_birth_date("Grace Hopper") == "1906-12-09", "Incorrect birth date for Grace Hopper"
+    assert get_birth_date("Alan Turing") == "1912-06-23", "Incorrect birth date for Alan Turing"
     assert get_birth_date("Tim Berners-Lee") == "1955-06-08", "Incorrect birth date for Tim Berners-Lee"
     assert get_birth_date("Anita Borg") == "1949-01-17", "Incorrect birth date for Anita Borg"
     print('\n<<<< Birth date tests passed >>>>')
